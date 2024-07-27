@@ -1,0 +1,14 @@
+<div class="main-container">
+    <mat-toolbar class="sticky-toolbar">
+        <h1 class="toolbar-title">Delflix</h1>
+    </mat-toolbar>
+
+    <div class="content-wrapper">
+        <div class="background-image-container" ></div>
+        <app-movie-filter #filter id="filter"></app-movie-filter>
+        <app-movie-list></app-movie-list>
+    </div>
+
+    <button *ngIf="buttonVisible" class="button" (click)="scrollToFilter()">Ver Filtros</button>
+    
+</div>

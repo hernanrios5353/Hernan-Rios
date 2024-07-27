@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: black; 
+}
+
+.mat-mdc-standard-chip .mdc-evolution-chip__action--primary {
+    font: inherit;
+    letter-spacing: inherit;
+    white-space: inherit;
+    cursor: pointer;
+    background-color: rgb(119, 100, 100);
+    border-radius: 7px;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: rgb(54, 45, 45) !important;
+}
+
+//rgb(112, 88, 88)

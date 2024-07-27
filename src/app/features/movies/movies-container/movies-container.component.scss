@@ -1,0 +1,71 @@
+// Variables
+$primary-color: rgb(228, 46, 33);
+$secondary-color: rgb(255, 187, 0);
+$button-color: rgb(209, 59, 59);
+$button-hover-color: rgb(189, 49, 49);
+$background-color: black;
+$text-color: white;
+
+// Mixins
+@mixin button-styles {
+  padding: 10px 20px;
+  background-color: $button-color;
+  color: $text-color;
+  border: none;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
+
+// Styles
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 200vh;
+  position: relative;
+}
+
+.sticky-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $background-color;
+}
+
+.toolbar-title {
+  color: $primary-color;
+  text-shadow: 1px 1px 2px $secondary-color;
+  font-size: 30px !important;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.background-image-container {
+  background: {
+    image: url('/assets/peakpx.jpg');
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+  height: calc(100vh);
+}
+
+.button {
+  @include button-styles;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

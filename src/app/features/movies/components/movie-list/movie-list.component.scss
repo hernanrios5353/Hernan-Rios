@@ -1,0 +1,116 @@
+// Variables
+$background-color: rgb(0, 0, 0);
+$text-color: rgb(231, 204, 204);
+$accent-color: rgb(209, 59, 59);
+$genre-color: rgb(255, 124, 124);
+$error-bg: #383636;
+$error-border: #f5c6cb;
+$scrollbar-bg: rgb(87, 71, 71);
+$scrollbar-thumb: rgb(90, 76, 76);
+$scrollbar-thumb-hover: rgb(112, 88, 88);
+$scrollbar-track: #2c2c2c;
+
+// Mixins
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: $scrollbar-bg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $scrollbar-thumb-hover;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $scrollbar-track;
+    border-radius: 5px;
+  }
+}
+
+@mixin card-section {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0px;
+  border: none;
+  box-shadow: none;
+}
+
+// Styles
+.body-list {
+  background-color: $background-color;
+  padding-top: 20px;
+  padding-right: 0px;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  height: auto;
+  padding: 0 15px;
+
+  .error-message {
+    background-color: $error-bg;
+    padding: 15px;
+    border: 1px solid $error-border;
+    border-radius: 4px;
+    text-align: center;
+  }
+}
+
+.container-card-movie {
+  margin-right: 0px !important;
+  padding-right: 0px !important;
+  margin-bottom: 30px !important;
+}
+
+p {
+  color: $text-color;
+}
+
+.genere {
+  color: $genre-color;
+  margin-top: 5px !important;
+}
+
+.footer {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-top: auto;
+}
+
+mat-card {
+  height: 400px !important;
+
+  .card-header {
+    @include card-section;
+    @include scrollbar;
+    max-height: 90px;
+    margin-bottom: 10px;
+  }
+
+  .card-body {
+    @include card-section;
+    @include scrollbar;
+    height: 200px;
+  }
+
+  .card-header p, .card-body p {
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+mat-card-title {
+  color: $accent-color;
+  text-shadow: 4px 4px 4px $background-color;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+}

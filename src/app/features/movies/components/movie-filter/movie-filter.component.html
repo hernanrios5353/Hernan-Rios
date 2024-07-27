@@ -1,0 +1,36 @@
+<div class="container-fluid row body-filter">
+  
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <p class="titulo-filtro">{{titulo}}</p>
+  </div>
+  
+  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 filter-form-field">
+    <mat-form-field class="w-100">
+      <mat-label>Título de la película</mat-label>
+      <input matInput (input)="updateNameFilter($event)" placeholder="Título de la película">
+    </mat-form-field>
+  </div>
+
+  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 filter-form-field">
+    <mat-form-field class="w-100" >
+      <mat-label>Descripción de la película</mat-label>
+      <input matInput (input)="updateDescriptionFilter($event)" placeholder="Descripción">
+    </mat-form-field>
+  </div>
+
+  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 filter-form-field">
+    <mat-form-field class="w-100">
+      <mat-label>Géneros</mat-label>
+      <mat-select (selectionChange)="updateGenreFilter($event)">
+        <mat-option value="">Todos los géneros</mat-option>
+        <mat-option *ngFor="let genre of genres$ | async" [value]="genre">{{genre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <hr>
+  </div>
+
+
+</div>
