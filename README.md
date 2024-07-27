@@ -39,9 +39,6 @@ src/
 - Clona el proyecto desde GitHub usando el siguiente comando: 
     git clone https://github.com/hernanrios5353/Hernan-Rios.git
 
-- Navega al directorio del proyecto:
-    cd Hernan-Rios
-
 - Instala las dependencias del proyecto:
     npm install
 

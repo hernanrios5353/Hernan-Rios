@@ -59,9 +59,7 @@ export class MoviesContainerComponent implements AfterViewInit {
         top: elementPosition - 450,
         behavior: 'smooth'
       });
-    } else {
-      console.error('Filter element is not available.');
-    }
+    } 
   }
 
 }
